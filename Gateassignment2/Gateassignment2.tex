@@ -165,12 +165,17 @@ Given,
 \begin{align}
     h(t)&=e^{-2t}u(t)
 \end{align}
-Taking Fourier Transform
+Finding the laplace transform
 \begin{align}
-    H(j\omega)&=\int_{-\infty}^{\infty}h(t)e^{-j\omega t}dt\\
-    &=\int_0^{\infty}e^{-2t}e^{-j\omega t}dt\\
-    &=\int_0^{\infty}e^{-(2+j\omega)t}dt\\
-    &=\frac{1}{2+j\omega}
+    \mathcal{L}(h(t))&=\int_{0}^{\infty}h(t)e^{s-t}dt\\
+    &=\int_0^{\infty}e^{-2t}e^{-st}dt\\
+    &=\int_0^{\infty}e^{-(2+s)t}dt\\
+    &=\frac{1}{2+s}
+\end{align}
+The Fourier transform is nothing but the Laplace transform evaluated at $s=j\omega$\\
+\begin{align}
+    H(\omega)&=|\mathcal{L}(f(t))|_{s=j\omega}\\
+    \implies H(\omega)&= \frac{1}{2+j\omega}
 \end{align}
 Therefore, frequency response $H(\omega)=\frac{1}{2+j\omega}$\\
 Hence, option (c) is correct answer
